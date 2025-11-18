@@ -82,17 +82,12 @@ mvn test
 
 The test suite includes:
 
-CartTest – verifies cart behavior, subtotal, and quantity updates.
-
-MenuItemTest – checks record creation and basic invariants.
-
-OrderTests – validates order totals and tax calculations.
-
-ReceiptFileTests – ensures receipts are correctly saved to files.
-
-ReceiptServiceTest – integration-style tests for the main service.
-
-SqliteReceiptRepositoryTest – tests SQLite persistence using schema.sql.
+- `CartTest` → Verifies cart behavior, subtotal, and quantity updates.
+- `MenuItemTest` → Checks record creation and basic invariants.
+- `OrderTests` → Validates order totals and tax calculations.
+- `ReceiptFileTests` → Ensures receipts are correctly saved to files.
+- `ReceiptServiceTest` → Integration-style tests for the main service.
+- `SqliteReceiptRepositoryTest` → Tests SQLite persistence using schema.sql.
 
 ## 🛠️ Required Configuration
 **SQLite Database**
@@ -113,5 +108,5 @@ FileReceiptRepository
 ```
 
 
-Developed by Sureeporn Apaikawee
-for CCTB - Software Quality Assurance / Java OOP Project
+**Developed by Sureeporn Apaikawee**
+- for CCTB - Software Quality Assurance / Java OOP Project
