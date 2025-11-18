@@ -1,5 +1,5 @@
 # AnnaCoffee
-A Java application that simulates a coffee shop ordering system. Built using Object-Oriented Programming principles, featuring class design for menu management, category handling, and order processing. Designed for learning and practicing clean code, encapsulation, and inheritance concepts.
+A Java application that simulates a coffee shop ordering system. Built using Object-Oriented Programming principles,this system includes menu handling, cart operations, tax calculation, receipt saving, UI skeletons, and automated tests. Designed for learning and practicing clean code, encapsulation, and inheritance concepts.
 
 ## 🏠 Project Overview
 AnnaCoffee is a Java console-based coffee shop ordering system built using Object-Oriented Programming (OOP) principles.  
@@ -109,4 +109,4 @@ FileReceiptRepository
 
 
 **Developed by Sureeporn Apaikawee**
-- for CCTB - Software Quality Assurance / Java OOP Project
+for CCTB - Software Quality Assurance / Java OOP Project
