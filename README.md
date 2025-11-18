@@ -32,21 +32,20 @@ Applies a flat tax rate and calculates final totals.
 ## 🖥️ **User Interface**
 
 ### 💻 **CLI Application**
-Located in:
-
-com.sureeporn.kiosk.app.cli.Main
-
-yaml
-Copy code
+Located in: com.sureeporn.kiosk.app.cli.Main
 
 Allows basic ordering from the terminal, adding items, viewing cart, and printing the receipt.
 
 ---
 
 ### 🪟 **GUI Application (Swing)**
-Located in:
+Located in: com.sureeporn.kiosk.app.GUI.MainGUI
 
-com.sureeporn.kiosk.app.GUI.MainGUI
+A UI skeleton using:
+- `MainFrame`
+- `CartTableModel`
+
+Displays menu, cart table, totals, and basic buttons (skeleton only).
 
 ---
 
