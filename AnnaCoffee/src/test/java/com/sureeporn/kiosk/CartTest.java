@@ -20,7 +20,7 @@ class CartTest {
         );
         Cart c = new Cart();
         c.add(coffee, 2);
-        assertEquals(new BigDecimal("6.00"), c.subtotal());
+        assertEquals(new BigDecimal("6.00"), c.getSubtotal());
     }
 
     @Test

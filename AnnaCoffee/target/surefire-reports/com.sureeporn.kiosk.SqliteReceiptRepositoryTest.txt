@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.sureeporn.kiosk.SqliteReceiptRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.267 s <<< FAILURE! -- in com.sureeporn.kiosk.SqliteReceiptRepositoryTest
+com.sureeporn.kiosk.SqliteReceiptRepositoryTest.saves_receipt_and_returns_id -- Time elapsed: 0.255 s <<< ERROR!
+java.sql.SQLException: path to '/Documents/SQL/Anna.db': '/Documents' does not exist
+	at org.sqlite.SQLiteConnection.open(SQLiteConnection.java:261)
+	at org.sqlite.SQLiteConnection.<init>(SQLiteConnection.java:67)
+	at org.sqlite.jdbc3.JDBC3Connection.<init>(JDBC3Connection.java:28)
+	at org.sqlite.jdbc4.JDBC4Connection.<init>(JDBC4Connection.java:19)
+	at org.sqlite.JDBC.createConnection(JDBC.java:106)
+	at org.sqlite.JDBC.connect(JDBC.java:79)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:222)
+	at com.sureeporn.kiosk.repo.SqliteReceiptRepository.get(SqliteReceiptRepository.java:18)
+	at com.sureeporn.kiosk.repo.SqliteReceiptRepository.save(SqliteReceiptRepository.java:35)
+	at com.sureeporn.kiosk.model.ReceiptDbSaver.renderAndSave(ReceiptDbSaver.java:23)
+	at com.sureeporn.kiosk.SqliteReceiptRepositoryTest.saves_receipt_and_returns_id(SqliteReceiptRepositoryTest.java:30)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
