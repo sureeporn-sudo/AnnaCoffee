@@ -8,42 +8,45 @@ It allows users to browse menu items, add them to a cart, calculate tax, and gen
 ---
 
 ## 🧩 Main Components
-MenuItem (record)
-Represents a single menu item (name, category, price).
+### ✔ **`MenuItem` (record)**
+Represents a single item in the menu (name, category, price).
 
-Category / BeverageCategory / FoodCategory
-Encapsulate grouping of menu items.
+### ✔ **`Cart` & `CartItem`**
+Handles item selection, quantity updates, and subtotal calculations.
 
-Cart & CartItem
-Store selected items and quantities, and provide methods to calculate subtotal.
+### ✔ **`Order` (record)**
+Immutable model storing subtotal, tax, and total.
 
-FlatRateTaxCalculator
-Applies a flat tax rate to the cart total.
+### ✔ **`FlatRateTaxCalculator`**
+Applies a flat tax rate and calculates final totals.
 
-Order (record)
-Represents a finalized order including items, subtotal, tax, and total.
+### ✔ **Repositories**
+- `FileReceiptRepository` → Saves receipts to text files  
+- `SqliteReceiptRepository` → Saves receipts to SQLite database  
+- `InMemoryCatalogRepository` → Demo menu data loaded in memory  
 
-ReceiptSaver & ReceiptDbSaver (interfaces)
-Abstractions defining how a receipt is persisted.
+### ✔ **Services**
+- `ReceiptService` → business logic for generating and saving receipts
 
-Repositories
 
-FileReceiptRepository: saves receipts to a file
+## 🖥️ **User Interface**
 
-SqliteReceiptRepository: saves receipts to a SQLite database
+### 💻 **CLI Application**
+Located in:
 
-InMemoryCatalogRepository: provides menu items from in-memory data
+com.sureeporn.kiosk.app.cli.Main
 
-ReceiptService
-High-level service coordinating cart, tax calculation, order creation, and saving the receipt via a chosen repository.
+yaml
+Copy code
 
-UI components
+Allows basic ordering from the terminal, adding items, viewing cart, and printing the receipt.
 
-CLI (com.sureeporn.kiosk.app.cli.Main)
-Simple command-line interface allowing basic ordering flow.
+---
 
-Swing UI (MainGUI / MainFrame and CartTableModel)
-A minimal graphical UI skeleton that shows menu items, the cart, and totals.
+### 🪟 **GUI Application (Swing)**
+Located in:
+
+com.sureeporn.kiosk.app.GUI.MainGUI
 
 ---
 
