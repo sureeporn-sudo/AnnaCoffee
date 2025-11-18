@@ -8,17 +8,13 @@ It allows users to browse menu items, add them to a cart, calculate tax, and gen
 ---
 
 ## 🧩 Main Components
-### ✔ **`MenuItem` (record)**
-Represents a single item in the menu (name, category, price).
-
-### ✔ **`Cart` & `CartItem`**
-Handles item selection, quantity updates, and subtotal calculations.
-
-### ✔ **`Order` (record)**
-Immutable model storing subtotal, tax, and total.
-
-### ✔ **`FlatRateTaxCalculator`**
-Applies a flat tax rate and calculates final totals.
+### ✔ **Domain Models (Records & Classes)**
+- `MenuItem (record)` → Immutable item (name, category, price)  
+- `Cart & CartItem` → Track items and quantities  
+- `Order (record)` → Finalized order with totals  
+- `FlatRateTaxCalculator` → Applies fixed-rate tax  
+- `Category / BeverageCategory / FoodCategory` → Classify items  
+- `ReceiptSaver / ReceiptDbSaver` → Prepare receipt output structures  
 
 ### ✔ **`Interfaces`**
 - `CatalogRepository` → Provides menu items (categories, beverages, food).  
@@ -33,7 +29,7 @@ Applies a flat tax rate and calculates final totals.
 - `InMemoryCatalogRepository` → Demo menu data loaded in memory  
 
 ### ✔ **Services**
-- `ReceiptService` → business logic for generating and saving receipts
+- `ReceiptService` → Business logic for generating and saving receipts
 - `MenuFilters` → Utility service for filtering menu items by category or name.
 
 
@@ -55,15 +51,30 @@ A UI skeleton using:
 
 Displays menu, cart table, totals, and basic buttons (skeleton only).
 
----
+--
+## 🛠️ **How to Build**
 
-## ⚙️ Build & Run Instructions
-1. Clone the repository:
+This is a **Maven project**.
+
+```bash
+mvn clean install
+
+For compilation only:
+
+mvn compile
+ ```
+
+Run the CLI:
    ```bash
-   git clone https://github.com/sureeporn-sudo/AnnaCoffee.git
-   cd AnnaCoffee
-   mvn clean compile exec:java
-   ```
+mvn exec:java -Dexec.mainClass="com.sureeporn.kiosk.app.cli.Main"
+ ```
+
+Run the GUI:
+   ```bash
+mvn exec:java -Dexec.mainClass="com.sureeporn.kiosk.app.GUI.MainGUI"
+ ```
+--
+
 ## 🧪 Running Tests
 To run automated tests:
 ```bash
@@ -83,6 +94,26 @@ ReceiptFileTests – ensures receipts are correctly saved to files.
 ReceiptServiceTest – integration-style tests for the main service.
 
 SqliteReceiptRepositoryTest – tests SQLite persistence using schema.sql.
+
+--
+
+## 🛠️ Required Configuration
+**SQLite Database**
+
+The schema is located at:
+```bash
+src/main/resources/schema.sql
+```
+
+The SQLite DB file is managed by SqliteReceiptRepository.
+No additional configuration is required.
+
+**File Output**
+
+File-based receipts are created by:
+```ba
+FileReceiptRepository
+```
 
 
 Developed by Sureeporn Apaikawee
