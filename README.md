@@ -20,6 +20,13 @@ Immutable model storing subtotal, tax, and total.
 ### ✔ **`FlatRateTaxCalculator`**
 Applies a flat tax rate and calculates final totals.
 
+### ✔ **`Interfaces`**
+- `CatalogRepository` → Provides menu items (categories, beverages, food).  
+- `ReceiptRepository` → Abstraction for saving receipts (file system, in-memory, etc.).
+- `ReceiptDbRepository` → Defines how receipts are saved to a database (SQLite implementation).
+- `TaxCalculator` → General contract for any tax calculation strategy  
+(implemented by **FlatRateTaxCalculator**).
+
 ### ✔ **Repositories**
 - `FileReceiptRepository` → Saves receipts to text files  
 - `SqliteReceiptRepository` → Saves receipts to SQLite database  
@@ -27,6 +34,7 @@ Applies a flat tax rate and calculates final totals.
 
 ### ✔ **Services**
 - `ReceiptService` → business logic for generating and saving receipts
+- `MenuFilters` → Utility service for filtering menu items by category or name.
 
 
 ## 🖥️ **User Interface**
