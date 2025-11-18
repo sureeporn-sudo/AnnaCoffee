@@ -23,7 +23,7 @@ public class SqliteReceiptRepositoryTest {
         ReceiptService svc = new ReceiptService(new FlatRateTaxCalculator(new BigDecimal("0.06")));
 
 //        var repo = new SqliteReceiptRepository(temp.resolve("receipts.db"));
-        var repo = new SqliteReceiptRepository(Path.of("/Documents/SQL/Anna.db"));
+        var repo = new SqliteReceiptRepository(Path.of("target/Anna.db"));
         var saver = new ReceiptDbSaver(svc, repo);
 
         // Act
