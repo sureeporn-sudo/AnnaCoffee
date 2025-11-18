@@ -51,16 +51,16 @@ A UI skeleton using:
 
 Displays menu, cart table, totals, and basic buttons (skeleton only).
 
---
 ## 🛠️ **How to Build**
 
 This is a **Maven project**.
 
 ```bash
 mvn clean install
-
+ ```
 For compilation only:
 
+```bash
 mvn compile
  ```
 
@@ -73,7 +73,6 @@ Run the GUI:
    ```bash
 mvn exec:java -Dexec.mainClass="com.sureeporn.kiosk.app.GUI.MainGUI"
  ```
---
 
 ## 🧪 Running Tests
 To run automated tests:
@@ -94,8 +93,6 @@ ReceiptFileTests – ensures receipts are correctly saved to files.
 ReceiptServiceTest – integration-style tests for the main service.
 
 SqliteReceiptRepositoryTest – tests SQLite persistence using schema.sql.
-
---
 
 ## 🛠️ Required Configuration
 **SQLite Database**
