@@ -8,11 +8,42 @@ It allows users to browse menu items, add them to a cart, calculate tax, and gen
 ---
 
 ## 🧩 Main Components
-- **MenuItem / Category** – defines products and their properties.  
-- **Cart / CartItem** – handles order management and totals.  
-- **FlatRateTaxCalculator** – applies tax rate to subtotal.  
-- **ReceiptSaver / ReceiptRepository** – handles file saving for receipts.  
-- **ReceiptFileTests** – automated test verifying receipt generation.
+MenuItem (record)
+Represents a single menu item (name, category, price).
+
+Category / BeverageCategory / FoodCategory
+Encapsulate grouping of menu items.
+
+Cart & CartItem
+Store selected items and quantities, and provide methods to calculate subtotal.
+
+FlatRateTaxCalculator
+Applies a flat tax rate to the cart total.
+
+Order (record)
+Represents a finalized order including items, subtotal, tax, and total.
+
+ReceiptSaver & ReceiptDbSaver (interfaces)
+Abstractions defining how a receipt is persisted.
+
+Repositories
+
+FileReceiptRepository: saves receipts to a file
+
+SqliteReceiptRepository: saves receipts to a SQLite database
+
+InMemoryCatalogRepository: provides menu items from in-memory data
+
+ReceiptService
+High-level service coordinating cart, tax calculation, order creation, and saving the receipt via a chosen repository.
+
+UI components
+
+CLI (com.sureeporn.kiosk.app.cli.Main)
+Simple command-line interface allowing basic ordering flow.
+
+Swing UI (MainGUI / MainFrame and CartTableModel)
+A minimal graphical UI skeleton that shows menu items, the cart, and totals.
 
 ---
 
@@ -28,6 +59,21 @@ To run automated tests:
 ```bash
 mvn test
 ```
+
+The test suite includes:
+
+CartTest – verifies cart behavior, subtotal, and quantity updates.
+
+MenuItemTest – checks record creation and basic invariants.
+
+OrderTests – validates order totals and tax calculations.
+
+ReceiptFileTests – ensures receipts are correctly saved to files.
+
+ReceiptServiceTest – integration-style tests for the main service.
+
+SqliteReceiptRepositoryTest – tests SQLite persistence using schema.sql.
+
 
 Developed by Sureeporn Apaikawee
 for CCTB - Software Quality Assurance / Java OOP Project
